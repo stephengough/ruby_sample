@@ -1,0 +1,13 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker build -t ruby_sample .
+
+test:
+  override:
+    - docker run -it ruby_sample
+
