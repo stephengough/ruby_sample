@@ -3,11 +3,11 @@ machine:
     - docker
 
 dependencies:
-  override:
+  post:
     - docker info
     - docker build -t ruby_sample .
 
 test:
-  override:
+  post:
     - docker run -it ruby_sample
 
